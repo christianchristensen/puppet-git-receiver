@@ -23,6 +23,7 @@ REPOPATH="$PGRHOME/puppet.git"
 
 case "$1" in
     configure)
+				gem install puppet librarian-puppet
 				adduser --system \
             --quiet \
             --home "$PGRHOME" \
