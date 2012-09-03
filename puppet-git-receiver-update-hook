@@ -115,6 +115,13 @@ if [ -e $pf_file ] ; then
 		module_path="$module_path:$pf_path"
 fi
 
+lp_file="${DEST}/Puppetfile"
+
+if [ -e $lp_file ] ; then
+		# FIXME: Inherit verbosity flag from git args
+		notice "Installing librarian-puppet modules"
+		(cd $DEST; librarian-puppet install --verbose)
+fi
 
 manifest_file="${DEST}/manifests/site.pp"
 
